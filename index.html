@@ -40,22 +40,59 @@
         .link-container input { flex: 1; padding: 12px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; color: white; font-size: 1rem; }
         .copy-btn { background: #00b8ff; color: white; border: none; padding: 0 20px; border-radius: 8px; cursor: pointer; transition: background 0.3s; }
         .copy-btn:hover { background: #0099d4; }
+        .clear-btn { background: #8a9ba8; color: white; border: none; padding: 0 15px; border-radius: 8px; cursor: pointer; transition: background 0.3s; }
+        .clear-btn:hover { background: #6c7d8b; }
         .admin-panel { background: rgba(255, 215, 0, 0.05); border-color: rgba(255, 215, 0, 0.3); }
         .admin-panel h2 { color: #ffd700; border-bottom-color: rgba(255, 215, 0, 0.3); }
         .form-group { margin-bottom: 20px; }
         .form-group label { display: block; margin-bottom: 8px; color: #8a9ba8; }
         .form-group input { width: 100%; padding: 12px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; color: white; font-size: 1rem; }
-        .btn-primary { background: linear-gradient(45deg, #00ff9d, #00b8ff); color: #000; border: none; padding: 12px 30px; border-radius: 25px; font-weight: bold; cursor: pointer; }
+        .form-group input:focus { outline: none; border-color: #00ff9d; }
+        .admin-btn { background: linear-gradient(45deg, #ffd700, #ffaa00); color: #000; border: none; padding: 12px 25px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: transform 0.3s; margin-right: 10px; margin-bottom: 10px; }
+        .admin-btn:hover { transform: translateY(-2px); }
+        .btn-primary { background: linear-gradient(45deg, #00ff9d, #00b8ff); color: #000; }
+        .btn-danger { background: linear-gradient(45deg, #ff416c, #ff4b2b); color: white; }
+        .search-section { margin-top: 30px; padding: 20px; background: rgba(0, 0, 0, 0.2); border-radius: 10px; }
+        .search-results { margin-top: 20px; padding: 15px; background: rgba(0, 0, 0, 0.3); border-radius: 8px; display: none; }
+        .user-details { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 15px; }
+        .user-detail { background: rgba(255, 255, 255, 0.05); padding: 12px; border-radius: 8px; }
+        .user-detail label { display: block; color: #8a9ba8; font-size: 0.9rem; margin-bottom: 5px; }
+        .user-detail span { color: #00ff9d; font-weight: bold; font-size: 1.1rem; }
         .message { padding: 15px; border-radius: 8px; margin: 15px 0; display: none; }
         .success { background: rgba(0, 255, 157, 0.1); border: 1px solid rgba(0, 255, 157, 0.3); color: #00ff9d; }
         .error { background: rgba(255, 65, 108, 0.1); border: 1px solid rgba(255, 65, 108, 0.3); color: #ff416c; }
+        .info { background: rgba(0, 184, 255, 0.1); border: 1px solid rgba(0, 184, 255, 0.3); color: #00b8ff; }
+        .tabs { display: flex; margin-bottom: 25px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        .tab { padding: 12px 25px; cursor: pointer; border-bottom: 3px solid transparent; transition: all 0.3s; }
+        .tab:hover { background: rgba(255, 255, 255, 0.05); }
+        .tab.active { border-bottom: 3px solid #00ff9d; color: #00ff9d; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .loading { text-align: center; padding: 30px; color: #8a9ba8; }
+        .loading::after { content: ''; display: inline-block; width: 20px; height: 20px; border: 3px solid rgba(255, 255, 255, 0.3); border-top-color: #00ff9d; border-radius: 50%; animation: spin 1s linear infinite; margin-left: 10px; }
+        @keyframes spin { to { transform: rotate(360deg); } }
         footer { text-align: center; margin-top: 40px; padding: 20px; color: #8a9ba8; font-size: 0.9rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .admin-badge { background: linear-gradient(45deg, #ffd700, #ffaa00); color: black; padding: 3px 10px; border-radius: 15px; font-size: 0.8rem; margin-left: 10px; font-weight: bold; display: inline-block; }
+        .admin-info-panel { text-align: center; padding: 30px; color: #8a9ba8; background: rgba(0, 0, 0, 0.3); border-radius: 10px; border: 1px solid rgba(255, 215, 0, 0.2); }
+        .admin-info-panel h3 { color: #ffd700; margin-bottom: 15px; font-size: 1.5rem; }
+        .admin-info-panel p { margin-bottom: 10px; line-height: 1.5; }
+        .highlight { color: #00ff9d; font-weight: bold; }
+        .warning { color: #ffaa00; font-weight: bold; }
+        .admin-stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+        .admin-stat-card { background: rgba(255, 215, 0, 0.1); padding: 20px; border-radius: 10px; border: 1px solid rgba(255, 215, 0, 0.2); }
+        .admin-stat-label { color: #ffd700; font-size: 0.9rem; margin-bottom: 8px; }
+        .admin-stat-value { color: white; font-size: 1.5rem; font-weight: bold; }
+        .ref-info { margin-top: 10px; padding: 10px; background: rgba(0, 184, 255, 0.1); border-radius: 5px; font-size: 0.9rem; color: #00b8ff; }
+        .referrer-check { margin-top: 10px; font-size: 0.9rem; padding: 8px; border-radius: 5px; }
+        .referrer-valid { background: rgba(0, 255, 157, 0.1); color: #00ff9d; border: 1px solid rgba(0, 255, 157, 0.3); }
+        .referrer-invalid { background: rgba(255, 65, 108, 0.1); color: #ff416c; border: 1px solid rgba(255, 65, 108, 0.3); }
+        .referrer-locked { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(0, 255, 157, 0.3); color: #8a9ba8; cursor: not-allowed; }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>SparkPoint</h1>
+            <h1>SparkPoint <span id="adminBadge" class="admin-badge" style="display:none;">АДМИНИСТРАТОР</span></h1>
             <div class="subtitle">Реферальная система с 10 уровнями развития</div>
         </header>
         
@@ -64,91 +101,160 @@
             <div class="wallet-info" id="walletInfo">
                 <div>Адрес: <span id="walletAddress"></span></div>
                 <div>Баланс BNB: <span id="walletBalance"></span></div>
+                <div>Статус: <span id="userStatus">Не определен</span></div>
             </div>
         </div>
         
-        <div class="dashboard">
+        <div class="tabs">
+            <div class="tab active" data-tab="user">Личный кабинет</div>
+            <div class="tab" data-tab="admin" style="display:none;">Админ панель</div>
+        </div>
+        
+        <div class="tab-content active" id="userTab">
+            <div class="dashboard">
+                <div class="panel">
+                    <h2>Моя статистика</h2>
+                    <div class="stats-grid" id="userStats"></div>
+                    <div class="referral-link">
+                        <h3>Ваша реферальная ссылка</h3>
+                        <div class="link-container">
+                            <input type="text" id="referralLink" readonly value="Подключите кошелек для получения ссылки">
+                            <button class="copy-btn" onclick="copyReferralLink()">Копировать</button>
+                        </div>
+                        <div id="referrerCheckResult" class="referrer-check" style="display: none;"></div>
+                        <div id="currentRefInfo" class="ref-info" style="display: none;">
+                            По приглашению: <span id="currentRefAddress"></span>
+                            <button class="clear-btn" onclick="clearReferralParam()" style="margin-left: 10px; padding: 2px 8px; font-size: 0.8rem;">Сбросить</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="panel">
+                    <h2>Мои уровни</h2>
+                    <div class="levels-container" id="levelsContainer"></div>
+                </div>
+            </div>
+            
             <div class="panel">
-                <h2>Регистрация</h2>
+                <h2>Регистрация нового участника</h2>
                 <div class="form-group">
-                    <label for="referrerAddress">Адрес пригласителя:</label>
-                    <input type="text" id="referrerAddress" placeholder="0x..." value="0x0000000000000000000000000000000000000000">
+                    <label for="referrerAddress">Адрес вашего пригласителя:</label>
+                    <input type="text" id="referrerAddress" placeholder="0x..." value="" oninput="checkReferrerExists()">
+                    <div id="referrerStatus" style="margin-top: 5px; font-size: 0.9rem;"></div>
                 </div>
                 <div style="margin: 20px 0; padding: 15px; background: rgba(0, 184, 255, 0.1); border-radius: 8px; color: #00b8ff;">
                     <strong>Стоимость регистрации:</strong> 0.02 BNB
                 </div>
-                <button class="btn-primary" id="registerBtn">Зарегистрироваться за 0.02 BNB</button>
-                <div id="statusMessage" class="message"></div>
+                <button class="connect-btn btn-primary" id="registerBtn">Зарегистрироваться за 0.02 BNB</button>
+                <div class="message" id="registerMessage"></div>
             </div>
         </div>
-
+        
+        <div class="tab-content" id="adminTab">
+            <div class="panel admin-panel">
+                <h2>Панель администратора</h2>
+                <div class="admin-stats-grid" id="adminStats"></div>
+                <div class="form-group">
+                    <h3>Бесплатное добавление участника</h3>
+                    <label for="newUserAddress">Адрес нового участника:</label>
+                    <input type="text" id="newUserAddress" placeholder="0x...">
+                    <label for="newUserReferrer" style="margin-top: 15px;">Адрес пригласителя:</label>
+                    <input type="text" id="newUserReferrer" placeholder="0x...">
+                    <button class="admin-btn btn-primary" id="addUserBtn">Добавить участника бесплатно</button>
+                    <div class="message" id="addUserMessage"></div>
+                </div>
+                <div class="form-group">
+                    <h3>Управление контрактом</h3>
+                    <button class="admin-btn btn-primary" id="withdrawBtn">Вывести комиссии на кошелек</button>
+                    <div class="message" id="withdrawMessage"></div>
+                </div>
+                <div class="search-section">
+                    <h3>Поиск участника</h3>
+                    <div class="form-group">
+                        <label for="searchAddress">Адрес участника:</label>
+                        <input type="text" id="searchAddress" placeholder="0x...">
+                        <button class="admin-btn" id="searchBtn" style="margin-top: 10px;">Найти участника</button>
+                    </div>
+                    <div class="search-results" id="searchResults">
+                        <h3>Результаты поиска</h3>
+                        <div class="user-details" id="userDetails"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="message" id="globalMessage"></div>
+        
         <footer>
-            Контракт: <a href="https://bscscan.com/address/0x0d9c8b7bb5371bE4ba575C21DE44723Bd2F6Ad6c" target="_blank" style="color: #00b8ff;">0x0d9c...Ad6c</a>
+            Контракт: <a href="https://bscscan.com/address/0x0d9c8b7bb5371bE4ba575C21DE44723Bd2F6Ad6c" target="_blank" style="color: #00b8ff;">0x0d9c...Ad6c</a> | SparkPoint v1.0 | Для работы требуется MetaMask
         </footer>
     </div>
 
     <script>
+        // ==============================
+        // КОНФИГУРАЦИЯ КОНТРАКТА
+        // ==============================
         const CONTRACT_ADDRESS = '0x0d9c8b7bb5371bE4ba575C21DE44723Bd2F6Ad6c';
-        const ENTRY_PRICE = '0.02'; // Цена в BNB
+        const CONTRACT_ABI = [{"inputs":[{"internalType":"address","name":"_user","type":"address"},{"internalType":"address","name":"_referrer","type":"address"}],"name":"adminAddUser","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_referrer","type":"address"}],"name":"register","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"_newAdmin","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"withdrawAdminFees","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"},{"inputs":[],"name":"admin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"ENTRY_PRICE","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"thresholds","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"","type":"address"}],"name":"users","outputs":[{"internalType":"uint256","name":"level","type":"uint256"},{"internalType":"address","name":"referrer","type":"address"},{"internalType":"uint256","name":"internalBalance","type":"uint256"},{"internalType":"uint256","name":"referralsInLevel","type":"uint256"},{"internalType":"uint256","name":"totalDirectReferrals","type":"uint256"},{"internalType":"uint256","name":"registrationTime","type":"uint256"},{"internalType":"bool","name":"exists","type":"bool"}],"stateMutability":"view","type":"function"}];
         
-        // ABI только для регистрации
-        const CONTRACT_ABI = [{"inputs":[{"internalType":"address","name":"_referrer","type":"address"}],"name":"register","outputs":[],"stateMutability":"payable","type":"function"}];
-
+        const LEVEL_THRESHOLDS = [0, 2, 6, 14, 30, 62, 2, 6, 14, 30, 62];
+        
         let web3;
         let contract;
         let userAccount;
-
-        async function init() {
-            if (window.ethereum) {
-                web3 = new Web3(window.ethereum);
-                document.getElementById('connectWallet').addEventListener('click', connect);
-                document.getElementById('registerBtn').addEventListener('click', register);
+        let isAdmin = false;
+        
+        // ==============================
+        // ЭЛЕМЕНТЫ DOM
+        // ==============================
+        const connectWalletBtn = document.getElementById('connectWallet');
+        const walletInfo = document.getElementById('walletInfo');
+        const walletAddress = document.getElementById('walletAddress');
+        const walletBalance = document.getElementById('walletBalance');
+        const userStatus = document.getElementById('userStatus');
+        const adminBadge = document.getElementById('adminBadge');
+        const userStats = document.getElementById('userStats');
+        const levelsContainer = document.getElementById('levelsContainer');
+        const referralLink = document.getElementById('referralLink');
+        const referrerAddressInput = document.getElementById('referrerAddress');
+        const referrerStatus = document.getElementById('referrerStatus');
+        const registerBtn = document.getElementById('registerBtn');
+        const registerMessage = document.getElementById('registerMessage');
+        const adminStats = document.getElementById('adminStats');
+        const addUserBtn = document.getElementById('addUserBtn');
+        const addUserMessage = document.getElementById('addUserMessage');
+        const withdrawBtn = document.getElementById('withdrawBtn');
+        const withdrawMessage = document.getElementById('withdrawMessage');
+        const searchBtn = document.getElementById('searchBtn');
+        const searchResults = document.getElementById('searchResults');
+        const userDetails = document.getElementById('userDetails');
+        const globalMessage = document.getElementById('globalMessage');
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        const currentRefInfo = document.getElementById('currentRefInfo');
+        const currentRefAddress = document.getElementById('currentRefAddress');
+        const referrerCheckResult = document.getElementById('referrerCheckResult');
+        
+        // ==============================
+        // ИНИЦИАЛИЗАЦИЯ
+        // ==============================
+        window.addEventListener('load', async () => {
+            handleUrlParams();
+            
+            if (typeof window.ethereum !== 'undefined') {
+                console.log('MetaMask обнаружен');
+                await initWeb3();
             } else {
-                alert("Установите MetaMask!");
+                showMessage('Для работы приложения необходимо расширение MetaMask', 'error', globalMessage);
+                connectWalletBtn.textContent = 'Установите MetaMask';
+                connectWalletBtn.disabled = true;
             }
-        }
-
-        async function connect() {
-            try {
-                const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-                userAccount = accounts[0];
-                document.getElementById('walletAddress').innerText = userAccount;
-                document.getElementById('walletInfo').style.display = 'block';
-                document.getElementById('connectWallet').innerText = "Подключено";
-                
-                const balance = await web3.eth.getBalance(userAccount);
-                document.getElementById('walletBalance').innerText = web3.utils.fromWei(balance, 'ether') + " BNB";
-                
-                contract = new web3.eth.Contract(CONTRACT_ABI, CONTRACT_ADDRESS);
-            } catch (error) {
-                console.error(error);
-            }
-        }
-
-        async function register() {
-            if (!userAccount) return alert("Сначала подключите кошелек!");
             
-            const referrer = document.getElementById('referrerAddress').value;
-            const statusMsg = document.getElementById('statusMessage');
-            
-            statusMsg.style.display = 'block';
-            statusMsg.className = 'message';
-            statusMsg.innerText = "Ожидание подтверждения...";
-
-            try {
-                await contract.methods.register(referrer).send({
-                    from: userAccount,
-                    value: web3.utils.toWei(ENTRY_PRICE, 'ether')
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    activateTab(tabId);
                 });
-                statusMsg.innerText = "Успешная регистрация!";
-                statusMsg.classList.add('success');
-            } catch (error) {
-                statusMsg.innerText = "Ошибка: " + error.message;
-                statusMsg.classList.add('error');
-            }
-        }
-
-        window.addEventListener('load', init);
-    </script>
-</body>
-</html>
+            });
+            
+            connectWalletBtn.addEvent
